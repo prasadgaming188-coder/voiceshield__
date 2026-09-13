@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VoiceShield | SIH26104</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div><div class="brand">VoiceShield</div><div class="sub">Voice Integrity & Impersonation Risk Platform</div></div>
+  <div class="tag">SIH26104 • CYBERSECURITY</div>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow">PROACTIVE VOICE SECURITY</div>
+  <h1>Detect suspicious synthetic and impersonated voices before sensitive actions.</h1>
+  <p>Near-real-time prototype combining acoustic, spectral, prosodic and contextual signals into an actionable risk score.</p>
+</section>
+<section class="layout">
+<div>
+  <div class="card">
+    <div class="cardhead"><h2>1. Voice input</h2><span id="recordState">Ready</span></div>
+    <div class="recorder"><button id="recordBtn">● Record microphone</button><span id="timer">00:00</span></div>
+    <p class="muted">Record 8–15 seconds and optionally choose a reference file. Both samples are compared for speaker consistency.</p>
+    <label class="filelabel">Reference / second sample<input id="audio" type="file" accept="audio/*"></label>
+    <audio id="preview" controls hidden></audio>
+    <div id="comparisonHint" class="muted">For the strongest demo, provide both a microphone recording and a reference recording.</div>
+  </div>
+  <div class="card">
+    <div class="cardhead"><h2>2. Call / transaction context</h2><span>Optional</span></div>
+    <div class="formgrid">
+      <label>Caller type<select id="callerType"><option>Employee</option><option>Executive</option><option>Government Official</option><option>Customer</option></select></label>
+      <label>Call origin<select id="origin"><option>Known</option><option>Unknown</option></select></label>
+      <label>Transaction amount (₹)<input id="amount" type="number" value="500000" min="0"></label>
+      <label>Known contact<select id="known"><option value="true">Yes</option><option value="false">No</option></select></label>
+      <label>Previous fraud flag<select id="fraud"><option value="false">No</option><option value="true">Yes</option></select></label>
+      <label>Sensitive action<select id="sensitive"><option value="true">Yes</option><option value="false">No</option></select></label>
+    </div>
+    <button class="primary" id="analyze">Analyze voice & context</button>
+    <div id="status" class="muted"></div>
+  </div>
+</div>
+<div>
+  <div class="card scorecard">
+    <div class="cardhead"><h2>Threat assessment</h2><strong id="level">—</strong></div>
+    <div class="score"><span id="risk">—</span><small>% risk</small></div>
+    <div class="meter"><div id="bar"></div></div>
+    <div class="twocol"><div><span>Voice risk</span><b id="voiceRisk">—</b></div><div><span>Authenticity</span><b id="auth">—</b></div></div>
+    <div class="twocol"><div><span>Speaker similarity</span><b id="similarity">—</b></div><div><span>Consistency</span><b id="consistency">—</b></div></div>
+    <div class="alertbox"><b id="alertTitle">Awaiting analysis</b><p id="rec">Upload or record audio to begin.</p></div>
+  </div>
+  <div class="card">
+    <div class="cardhead"><h2>Multi-layer evidence</h2><span>Prototype indicators</span></div>
+    <div class="layer"><span>Acoustic</span><div><i id="acoustic"></i></div><b id="acousticV">—</b></div>
+    <div class="layer"><span>Spectral</span><div><i id="spectral"></i></div><b id="spectralV">—</b></div>
+    <div class="layer"><span>Prosody</span><div><i id="prosody"></i></div><b id="prosodyV">—</b></div>
+  </div>
+  <div class="card">
+    <div class="cardhead"><h2>Privacy & integration</h2><span>Security controls</span></div>
+    <div class="checks">
+      <div>✓ Raw audio deleted after processing</div>
+      <div>✓ Feature/result-only event logging</div>
+      <div>✓ REST API for enterprise integration</div>
+      <div>✓ Edge/on-device deployment ready as roadmap</div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<script src="/script.js"></script>
+</body>
+</html>
