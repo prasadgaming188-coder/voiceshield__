@@ -6,3 +6,5 @@ scikit-learn
 librosa
 soundfile
 joblib
+gunicorn
+python-dotenv
